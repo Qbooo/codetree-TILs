@@ -9,6 +9,14 @@ public class Main {
 
         int [] num = new int [3];
         num[0] = a;
+        if(a < b){
+            if(b<c){
+                System.out.println(b);
+            }
+            if(c < b){
+                System.out.println(c);
+            }
+        }
         if(b < a){
             num[0] = b;
             if(c < b){
