@@ -11,7 +11,7 @@ public class Main {
         String sex2 = s.nextLine();
 
 
-        if(age1 >= 19 && sex1.equals(" M")||age2 >= 19 && sex2.equals(" M")){
+        if(age1 >= 19 && sex1.trim().equals("M")||age2 >= 19 && sex2.trim().equals("M")){
             System.out.println("1");
         }
        
