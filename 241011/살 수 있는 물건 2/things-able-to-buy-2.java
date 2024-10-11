@@ -11,7 +11,7 @@ public class Main {
             System.out.println("book");
         }else if(money >= 1000){
             System.out.println("mask");
-        }else if(money >= 5000){
+        }else if(money >= 500){
             System.out.println("pen");
         }else{
             System.out.println("no");
