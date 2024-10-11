@@ -13,6 +13,8 @@ public class Main {
 
         if(age1 >= 19 && sex1.trim().equals("M")||age2 >= 19 && sex2.trim().equals("M")){
             System.out.println("1");
+        }else{
+            System.out.println("0");
         }
        
     }
