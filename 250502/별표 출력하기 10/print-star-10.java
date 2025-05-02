@@ -22,19 +22,42 @@ public class Main {
             }
             System.out.println();
         }
-
-       for(int i = 0; i < N; i++){
-        if(i%2 == 0){
-            for(int j = 1; j <= N/2 + 1 - i/2; j++){
-                System.out.print("* ");
+        if(N%2 == 1){
+            OddCnt = N/2 + 1;
+            evenCnt = OddCnt +1;
+            for(int i = 1; i <= N; i++){
+                if(i%2 == 1){
+                    for(int j = 0; j < OddCnt; j++){
+                        System.out.print("* ");
+                    }
+                    OddCnt--;
+                }else {
+                    for(int j = 0; j < evenCnt; j++){
+                        System.out.print("* ");
+                    }
+                    evenCnt++;
+                }
+                System.out.println();
             }
         }
         else {
-            for(int j = 1; j <= N/2 + 2 + i/2; j++){
-                System.out.print("* ");
+            OddCnt = N/2 + 1;
+            evenCnt = OddCnt - 1;
+            for(int i = 1; i <= N; i++){
+                if(i%2 == 1){
+                    for(int j = 0; j < OddCnt; j++){
+                        System.out.print("* ");
+                    }
+                    OddCnt++;
+                }
+                else{
+                    for(int j = 0; j < evenCnt; j++){
+                        System.out.print("* ");
+                    }
+                    evenCnt--;
+                }
+                System.out.println();
             }
         }
-        System.out.println();
-       }
     }
 }
