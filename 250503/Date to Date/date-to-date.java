@@ -21,6 +21,6 @@ public class Main {
         }
         sum2 = sum2 + d2;
 
-        System.out.print(sum2 - sum1);
+        System.out.print(sum2 - sum1 + 1);
     }
 }
