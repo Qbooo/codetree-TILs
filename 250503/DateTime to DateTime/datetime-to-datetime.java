@@ -13,9 +13,13 @@ public class Main {
         int C = sc.nextInt();
         // Please write your code here.
 
-        int startMin = dayToMin(10)+hourToMin(10)+11;
-        int endMin = dayToMin(A-1)+hourToMin(B-1)+C;
+        int startMin = dayToMin(11)+hourToMin(11)+11;
+        int endMin = dayToMin(A)+hourToMin(B)+C;
 
-        System.out.print(endMin-startMin);
+        if(endMin-startMin < 0){
+            System.out.print("-1");
+        }else{
+            System.out.print(endMin-startMin);
+        }
     }
 }
