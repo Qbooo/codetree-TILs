@@ -14,13 +14,15 @@ public class Main {
         for(int i = 0; i < m1 - 1; i++){
             startDays = startDays + month[i];
         }
-        startDays = startDays - month[m1-1] + d1;
+        startDays = startDays + d1;
+        //System.out.println(startDays);
 
         int endDays = 0;
         for(int i = 0; i < m2 - 1; i++){
             endDays = endDays + month[i];
         }
-        endDays = endDays - month[m2-1] + d2;
+        endDays = endDays + d2;
+        //System.out.println(endDays);
         int diffDays = endDays - startDays;
 
         if(diffDays < 0){
@@ -50,7 +52,6 @@ public class Main {
                 System.out.print("error");
             }
         }
-
         else{
 
             if(diffDays%7 == 0){
