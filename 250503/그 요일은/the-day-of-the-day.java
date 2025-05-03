@@ -50,10 +50,10 @@ public class Main {
         }
         endDay = endDay + d2;
 
-        cnt = (endDay - startDay) / 7 ;
+        cnt = (endDay - startDay) / 7;
         
-        if((endDay - startDay)%7 >= date){
-            cnt = cnt + 1;
+        if((endDay-startDay)%7 < date){
+            cnt = cnt - 1;
         }
 
         System.out.print(cnt);
