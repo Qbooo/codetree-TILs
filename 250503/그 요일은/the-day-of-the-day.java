@@ -16,25 +16,25 @@ public class Main {
         int cnt = 0;
         int date = 0;
 
-        if(A == "Mon"){
+        if(A.equals("Mon")){
             date = 0;
         }
-        else if(A == "Tue"){
+        else if(A.equals("Tue")){
             date = 1;
         }
-         else if(A == "Wed"){
+         else if(A.equals("Wed")){
             date = 2;
         }
-         else if(A == "Thu"){
+         else if(A.equals("Thu")){
             date = 3;
         }
-         else if(A == "Fri"){
+         else if(A.equals("Fri")){
             date = 4;
         }
-         else if(A == "Sat"){
+         else if(A.equals("Sat")){
             date = 5;
         }
-         else if(A == "Sun"){
+         else if(A.equals("Sun")){
             date = 6;
         }
 
@@ -54,13 +54,13 @@ public class Main {
         //System.out.println(diffDays);
 
         cnt = diffDays / 7;
-        
-        if(diffDays%7> date){
+        //System.out.println(cnt);
+        //System.out.println(diffDays%7);
+        //System.out.println(date);
+        if(diffDays%7 >= date){
             cnt = cnt + 1;
-        }else if (diffDays%7<date){
-            cnt = cnt;
         }else{
-            cnt = cnt + 1;
+            cnt = cnt;
         }
 
         System.out.print(cnt);
