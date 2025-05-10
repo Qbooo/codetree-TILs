@@ -8,19 +8,13 @@ public class Main {
 
         int n = binary.length();
         int[] two = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            two[i] = Character.getNumericValue(binary.charAt(i));
-        }
         int num = 0;
 
-        for (int i = 0; i < n; i++){
-            num = num * 2 + two[i];
+        for(int i = 0; i < n; i++){
+            num = num * 2 + (binary.charAt(i) - '0');
         }
 
-        System.out.println(num);
-
-        
+        System.out.print(num);
 
     }
 }
