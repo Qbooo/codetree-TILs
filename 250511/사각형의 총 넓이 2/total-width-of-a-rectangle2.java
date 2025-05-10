@@ -1,32 +1,35 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int N = sc.nextInt();
+        int[] x1 = new int[201];
+        int[] y1 = new int[201];
+        int[] x2 = new int[201];
+        int[] y2 = new int[201];
+        int[][] checked = new int [201][201];
+        for(int i = 0; i < N; i++){
+            x1[i] = sc.nextInt();
+            y1[i] = sc.nextInt();
+            x2[i] = sc.nextInt();
+            y2[i] = sc.nextInt();
 
-        // 2차원 평면: -100 ~ 100 → 0 ~ 200으로 매핑
-        boolean[][] plane = new boolean[201][201];
+            for(int j = x1[i]; j < x2[i]; j++){
+                for(int m = y1[i]; m < y2[i]; m++){
+                    checked[j][m]++;
+                }
+            }
+
+        }
         int size = 0;
-
-        for (int i = 0; i < n; i++) {
-            int x1 = sc.nextInt();
-            int y1 = sc.nextInt();
-            int x2 = sc.nextInt();
-            int y2 = sc.nextInt();
-
-            // 사각형 그리기
-            for (int x = x1 + 100; x < x2 + 100; x++) {
-                for (int y = y1 + 100; y < y2 + 100; y++) {
-                    if (!plane[x][y]) { // 아직 그리지 않았으면
-                        plane[x][y] = true; // 그린다
-                        size++; // 넓이 증가
-                    }
+        for(int i = 0; i < 201; i++){
+            for(int j = 0; j < 201; j++){
+                if(checked[i][j] > 0){
+                    size++;
                 }
             }
         }
-
-        // 최종 넓이 출력
         System.out.println(size);
     }
 }
