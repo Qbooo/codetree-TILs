@@ -33,9 +33,15 @@ public class Main {
                 checked[i][j] = 0;
             }
         }
-        for(int i = 0; i <Max; i++){
-            for(int j = 0; j < Max; j++){
-                if(checked[i][j] == 1){
+        
+        int minX = Math.min(ax1, Math.min(bx1, mx1));
+        int maxX = Math.max(ax2, Math.max(bx2, mx2));
+        int minY = Math.min(ay1, Math.min(by1, my1));
+        int maxY = Math.max(ay2, Math.max(by2, my2));
+
+        for(int i = minX; i < maxX; i++) {
+            for(int j = minY; j < maxY; j++) {
+                if(checked[i][j] == 1) {
                     count++;
                 }
             }
