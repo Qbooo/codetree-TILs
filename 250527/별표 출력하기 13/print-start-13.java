@@ -1,22 +1,34 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Please write your code here.
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
 
-        Scanner s = new Scanner(System.in);
+        for (int i = 1; i <= 2 * N; i++) {
+            int starCount;
 
-        int n = s.nextInt()
-
-        for(int i = n; i > 0; i--){
-            if(i%2 == 1){
-                for(int j = i; j > 0; j--) {
-                    System.out.print("* ")
-                }
+            if (i == 1 || i == 2 * N) {
+                starCount = N;
+            } else if (i == 2 || i == 2 * N - 1) {
+                starCount = 1;
+            } else if (i <= N) {
+                starCount = N - (i - 1);
+            } else {
+                starCount = i - N;
             }
-            else {
-                for(int j = 0; j < i; j++) {
-                    System.out.print("* ")
-                }
-            }
+
+            printStars(starCount);
         }
+
+        sc.close();
+    }
+
+    private static void printStars(int count) {
+        for (int j = 0; j < count; j++) {
+            System.out.print("*");
+            if (j != count - 1) System.out.print(" ");
+        }
+        System.out.println();
     }
 }
