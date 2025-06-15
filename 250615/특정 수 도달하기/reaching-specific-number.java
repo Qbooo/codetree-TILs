@@ -15,6 +15,10 @@ public class Main {
             sum = sum + n;
             cnt++;
         }
-        System.out.print(sum+" "+(double)sum/cnt);
+        if(cnt == 0){
+            System.out.print("0 -nan");
+        }else{
+             System.out.print(sum+" "+(double)sum/cnt);
+        }
     }
 }
