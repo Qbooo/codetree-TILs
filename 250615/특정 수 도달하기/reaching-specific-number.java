@@ -15,9 +15,8 @@ public class Main {
             sum = sum + n;
             cnt++;
         }
-        if(cnt == 0){
-            System.out.print("0 -nan");
-        }else{
+
+      {
              System.out.print(sum + " " + String.format("%.1f", (double)sum / cnt));
 
         }
