@@ -9,7 +9,7 @@ public class Main {
             num[i] = s.nextInt();
         }
         int even = num[1] + num[3] + num[5] + num[7] + num[9];
-        double three = (num[2] + num[5] + num[8]) / 3;
+        double three = (num[2] + num[5] + num[8]) / 3.0;
         System.out.printf("%d %.1f", even , three);
     }
 }
