@@ -10,17 +10,15 @@ public class Main {
 
         int[] div = new int[9999];
         int cnt = 0;
-        int share = 1;
-        while(share > 0){
+        while(bigNum > 0){
             div[cnt] = bigNum % smallNum;
             bigNum = bigNum / smallNum;
-            share = bigNum;
             cnt++;
         }
 
 
 
-        for(int i = 0; i < cnt - 1; i++){
+        for(int i = 0; i < cnt; i++){
             if(div[i] == 0){
                 spare[0]++;
             }else if(div[i] == 1){
