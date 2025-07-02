@@ -18,6 +18,8 @@ public class Main {
             cnt++;
         }
 
+        System.out.println(cnt);
+
         for(int i = 0; i < cnt; i++){
             if(div[i] == 0){
                 spare[0]++;
