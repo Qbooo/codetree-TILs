@@ -18,9 +18,9 @@ public class Main {
             cnt++;
         }
 
-        //System.out.println(cnt);
 
-        for(int i = 0; i < cnt; i++){
+
+        for(int i = 0; i < cnt - 1; i++){
             if(div[i] == 0){
                 spare[0]++;
             }else if(div[i] == 1){
