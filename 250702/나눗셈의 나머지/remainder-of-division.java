@@ -10,7 +10,7 @@ public class Main {
 
         int[] div = new int[9999];
         int cnt = 0;
-        while(bigNum > 0){
+        while(bigNum > 1){
             div[cnt] = bigNum % smallNum;
             bigNum = bigNum / smallNum;
             cnt++;
