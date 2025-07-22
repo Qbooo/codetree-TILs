@@ -8,6 +8,7 @@ public class Main {
         int n = s.nextInt();
 
         int[] nums = new int[n];
+        int a = 0;
 
         for(int i = 0; i < n; i++){
             nums[i] = s.nextInt();
@@ -15,17 +16,14 @@ public class Main {
         int count = Integer.MAX_VALUE;
         for(int i = 0; i < n - 1; i++){
             for(int j = i + 1; j < n; j++){
-                int a = Math.abs(nums[j] - nums[i]);
-                if(a <= min){
-                    int b = Math.abs(j - i);
-                    if(b < count){
-                        count = b;
-                    }
+                a = Math.abs(nums[j] - nums[i]);
+                if(a < min){
+                    min = a;
                 }
             }
         }
 
-        System.out.print(count);
+        System.out.print(min);
 
 
     }
