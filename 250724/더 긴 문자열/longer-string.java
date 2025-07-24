@@ -8,10 +8,10 @@ public class Main {
         String m = s.next();
 
         if(n.length() > m.length()){
-            System.out.println(n);
+            System.out.println(n+" "+n.length());
         }
         else if(n.length() < m.length()){
-            System.out.println(m);
+            System.out.println(m+" "+m.length());
         }
         else{
             System.out.println("same");
