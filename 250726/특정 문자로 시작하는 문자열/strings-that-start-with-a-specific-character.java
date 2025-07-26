@@ -8,7 +8,7 @@ public class Main {
         s.nextLine();
         int cnt = 0;
         double avg = 0;
-        int sum = 0;
+        double sum = 0;
 
         String[] words = new String[n];
 
