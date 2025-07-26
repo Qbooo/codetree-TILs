@@ -6,6 +6,9 @@ public class Main {
 
         String w = s.nextLine();
         int n = s.nextInt();
+        if(n>w.length()){
+            n = w.length();
+        }
 
         for(int i = w.length() - 1; i >= w.length() - n; i--){
             System.out.print(w.charAt(i));
