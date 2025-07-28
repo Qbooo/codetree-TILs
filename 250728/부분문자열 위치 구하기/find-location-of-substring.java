@@ -10,7 +10,7 @@ public class Main {
         boolean ex = false;
         int index = 0;
 
-        for(int i = 0; i < aa.length() - bb.length(); i++){
+        for(int i = 0; i < aa.length() - bb.length() + 1; i++){
             if(aa.substring(i,i+bb.length()).equals(bb)){
                 System.out.print(i);
                 ex = true;
