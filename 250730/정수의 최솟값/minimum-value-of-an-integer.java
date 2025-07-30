@@ -12,7 +12,7 @@ public class Main {
         if(z < min){
             min = z;
         }
-        return x;
+        return min;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
