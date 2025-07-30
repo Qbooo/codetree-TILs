@@ -7,10 +7,10 @@ public class Main {
             min = x;
         }
         if(y < min){
-            min = x;
+            min = y;
         }
         if(z < min){
-            min = x;
+            min = z;
         }
         return x;
     }
