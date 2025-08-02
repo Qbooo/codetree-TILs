@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static String sub(int[] a, int[] b){
-        for(int i = 0; i < a.length - b.length; i++){
+        for(int i = 0; i <= a.length - b.length; i++){
             int re = 0;
             for(int j = 0; j < b.length; j++){
                 if(a[j+i] == b[j]){
