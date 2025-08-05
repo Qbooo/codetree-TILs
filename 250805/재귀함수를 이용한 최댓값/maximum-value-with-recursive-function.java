@@ -17,6 +17,6 @@ public class Main {
             arr[i] = sc.nextInt();
         }
         // Please write your code here.
-        System.out.print(max(0, arr, 0));
+        System.out.print(max(0, arr, arr[0]));
     }
 }
