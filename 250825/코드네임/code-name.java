@@ -19,7 +19,7 @@ public class Main {
         for(int i = 0; i < 5; i++){
             String name = sc.next();
             int score = sc.nextInt();
-            sc.nextLine();
+
             agents[i] = new Agent(name, score);
         }
         int x = 0;
