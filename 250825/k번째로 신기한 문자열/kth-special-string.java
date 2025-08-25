@@ -16,10 +16,13 @@ public class Main {
         int m = t.length();
 
         for(int i = 0; i < n; i++){
-            if(words[i].substring(0, m).equals(t)){
+            if(words[i].length() >= m){
+                if(words[i].substring(0, m).equals(t)){
                 aa[x] = words[i];
                 x++;
+                }
             }
+
         }
 
         System.out.print(aa[k-1]);
