@@ -10,7 +10,7 @@ public class Main {
             char dir = sc.next().charAt(0);
             // Please write your code here.
             if(dir == 'L'){
-                for(int j = m; j > m - x; j--){
+                for(int j = m - 1; j >= m - x; j--){
                     ss[j]++;
                 }
                 m = m - x;
