@@ -13,10 +13,12 @@ public class Main {
                 for(int j = m; j > m - x; j--){
                     ss[j]++;
                 }
+                m = m - x;
             }else{
                 for(int j = m; j < m + x; j++){
                     ss[j]++;
                 }
+                m = m + x;
             }
         }
         int cnt = 0;
@@ -26,6 +28,6 @@ public class Main {
             }
         }
 
-        System.out.print(cnt - 1);
+        System.out.print(cnt);
     }
 }
