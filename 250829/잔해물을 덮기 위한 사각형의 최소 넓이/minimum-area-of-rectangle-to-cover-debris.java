@@ -21,7 +21,7 @@ public class Main {
         }else if((rect2_y1 > rect1_y1 && rect2_y1 < rect1_y2) && (rect2_y2 > rect1_y1 && rect2_y2 < rect1_y2)
         && (rect2_x1 < rect1_x1 && rect2_x2 > rect1_x2)){
             System.out.print((rect1_x2-rect1_x1) * (rect1_y2-rect1_y1));
-        }else if((rect2_x1 < rect1_x1 && rect2_y1 < rect1_y1) && (rect2_x2 > rect1_x2 && rect2_y2 > rect1_y2)){
+        }else if((rect2_x1 <= rect1_x1 && rect2_y1 <= rect1_y1) && (rect2_x2 >= rect1_x2 && rect2_y2 >= rect1_y2)){
             System.out.print("0");
         }
         else{
