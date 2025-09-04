@@ -24,7 +24,7 @@ public class Main {
                     at[j] = --loca;
                 }
             }
-            t = t+tt;
+            t = t+tt-1;
 
         }
 
@@ -41,7 +41,7 @@ public class Main {
                     bt[j] = --loca;
                 }
             }
-            t = t+tt;
+            t = t+tt-1;
 
         }
 
