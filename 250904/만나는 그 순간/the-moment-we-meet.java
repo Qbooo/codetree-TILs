@@ -7,13 +7,13 @@ public class Main {
         int m = sc.nextInt();
         
         // Please write your code here.
-        int[] ax = new int[2001];
-        int[] bx = new int[2001];
+        int[] ax = new int[2000001];
+        int[] bx = new int[2000001];
 
-        ax[1000] = 0;
-        bx[1000] = 0;
+        ax[1000000] = 0;
+        bx[1000000] = 0;
         int cnt = 0;
-        int x = 1000;
+        int x = 1000000;
         for(int i = 0; i < n; i++){
             char a = sc.next().charAt(0);
             int t = sc.nextInt();
@@ -33,7 +33,7 @@ public class Main {
 
         }
         cnt = 0;
-        x = 1000;
+        x = 1000000;
         for(int i = 0; i < m; i++){
             char b = sc.next().charAt(0);
             int t = sc.nextInt();
@@ -53,7 +53,7 @@ public class Main {
         }
         boolean meet = false;
         int min = Integer.MAX_VALUE;
-        for(int i = 1; i < 2001; i++){
+        for(int i = 1; i < 2000001; i++){
             //System.out.println("log =====> ax" + i + " " + ax[i] + " /// bx"+i+ " " + bx[i]);
             if(ax[i] == bx[i] && ax[i] > 0){
                 meet = true;
