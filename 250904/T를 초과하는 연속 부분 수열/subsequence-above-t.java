@@ -22,6 +22,8 @@ public class Main {
                 }else{
                     cnt = 1;
                 }
+            }else if(arr[i] > t){
+                cnt = 1;
             }
 
             if(max < cnt){
