@@ -24,7 +24,7 @@ public class Main {
                     at[j] = --loca;
                 }
             }
-            t = t+tt-1;
+            t = t+tt;
 
         }
 
@@ -41,7 +41,7 @@ public class Main {
                     bt[j] = --loca;
                 }
             }
-            t = t+tt-1;
+            t = t+tt;
 
         }
 
@@ -50,7 +50,7 @@ public class Main {
 
         for(int i = 0; i < 1000001; i++){
             if(at[i] == bt[i]){
-                System.out.print(i);
+                System.out.print(i+1);
                 meet = true;
                 break;
             }
