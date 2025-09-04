@@ -17,7 +17,7 @@ public class Main {
                 if(arr[i] > arr[i - 1]){
                     cnt++;
                 }else{
-                    cnt = 0;
+                    cnt = 1;
                 }
             }
 
