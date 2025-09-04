@@ -49,7 +49,7 @@ public class Main {
 
 
         for(int i = 0; i < 1000001; i++){
-            if(at[i] == bt[i]){
+            if(at[i] == bt[i] && at[i] > 0){
                 System.out.print(i+1);
                 meet = true;
                 break;
