@@ -11,7 +11,10 @@ public class Main {
         // Please write your code here.
         int cnt = 0;
         int max = 0;
-
+        if(arr[0] > t){
+            cnt = 1;
+            max = 1;
+        }
         for(int i = 1; i < n; i++){
             if(arr[i] > t && arr[i - 1] > t){
                 if(arr[i] > arr[i - 1]){
