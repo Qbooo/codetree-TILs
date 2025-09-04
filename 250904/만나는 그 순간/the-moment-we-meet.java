@@ -48,8 +48,8 @@ public class Main {
         boolean meet = false;
 
 
-        for(int i = 0; i < 1000001; i++){
-            if(at[i] == bt[i] && at[i] > 0){
+        for(int i = 0; i < t; i++){
+            if(at[i] == bt[i]){
                 System.out.print(i+1);
                 meet = true;
                 break;
