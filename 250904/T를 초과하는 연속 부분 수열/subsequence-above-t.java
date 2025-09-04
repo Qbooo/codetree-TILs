@@ -17,11 +17,7 @@ public class Main {
         }
         for(int i = 1; i < n; i++){
             if(arr[i] > t && arr[i - 1] > t){
-                if(arr[i] > arr[i - 1]){
-                    cnt++;
-                }else{
-                    cnt = 1;
-                }
+                cnt++;
             }else if(arr[i] > t){
                 cnt = 1;
             }
@@ -29,6 +25,8 @@ public class Main {
             if(max < cnt){
                 max = cnt;
             }
+
+            //System.out.println("log====> cnt " + cnt + " max " + max);
 
         }
 
