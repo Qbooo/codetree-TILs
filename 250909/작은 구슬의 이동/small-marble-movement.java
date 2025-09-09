@@ -20,20 +20,19 @@ public class Main {
         else if(D.equals("U")) idx = 2;
         else if(D.equals("L")) idx = 3;
         
-        int time = 0;
-        while(time < T) {
+        for(int i = 0; i < T; i++) {
             int nx = x + dx[idx];
             int ny = y + dy[idx];
             
-            // 경계를 벗어나면 방향 전환 (1초 소모)
+            // 경계를 벗어나면 방향만 전환 (이동X, 1초 소모)
             if(nx < 1 || nx > N || ny < 1 || ny > N) {
-                idx = 3 - idx; // 반대 방향으로 전환
-                time++; // 방향 전환에 1초 소모
+                idx = 3 - idx; // 방향 전환
+                // 위치는 그대로, i++는 for문에서 자동으로
             } else {
-                // 정상 이동 (1초 소모)
+                // 정상 이동
                 x = nx;
                 y = ny;
-                time++;
+                // i++는 for문에서 자동으로
             }
         }
         
