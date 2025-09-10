@@ -31,6 +31,7 @@ public class Main {
                 if(x == 0 && y == 0){
                     System.out.print(cnt);
                     arive = true;
+                    break;
                 }
             }
 
