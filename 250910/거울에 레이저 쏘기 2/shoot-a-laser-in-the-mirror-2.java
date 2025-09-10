@@ -55,7 +55,7 @@ public class Main {
         int startNum = sc.nextInt();
         // Please write your code here.
 
-        int w = (startNum - 1) / 4;
+        int w = (startNum - 1) / n;
         int num = startNum % n;
         int cnt = 1;
         xydir(w, num, n);
