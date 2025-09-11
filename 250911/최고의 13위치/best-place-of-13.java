@@ -11,8 +11,9 @@ public class Main {
         int maxCnt = 0;
         
         for(int i = 0; i < n; i++){
-            int cnt = 0;
+            
             for(int j = 0; j < n -2; j++){
+                int cnt = 0;
                 if(grid[i][j] == 1){
                     cnt++;
                 }
@@ -22,8 +23,9 @@ public class Main {
                 if(grid[i][j + 2] == 1){
                     cnt++;
                 }
+                maxCnt = Math.max(maxCnt, cnt);
             }
-            maxCnt = Math.max(maxCnt, cnt);
+            
         }
 
         System.out.print(maxCnt);
