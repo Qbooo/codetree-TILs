@@ -12,7 +12,7 @@ public class Main {
         }
         // Please write your code here.
         int max = 0;
-        for(int i = 1; i <= n - k + 1; i++){
+        for(int i = 1; i < 10000 - k + 1; i++){
             int point = 0;
             for(int j = i; j <= i + k; j++){
                 if(arr[j] == 'G')point++;
