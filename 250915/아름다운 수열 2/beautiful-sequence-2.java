@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -10,32 +11,26 @@ public class Main {
         int[] B = new int[M];
         for (int i = 0; i < M; i++)
             B[i] = sc.nextInt();
-        // Please write your code here.
+
         int cnt = 0;
-        int[] xB = new int [M];
-        for(int i = 0; i <= N - M; i++){
-            int xCnt = 0;
-            for(int j = i; j < i + M; j++){
-                
-                for(int x = 0; x < M; x++){
-                    
-                    if(A[j] == B[x]){
-                        if(xB[x] == 1)continue;
-                        else{
-                            xB[x] = 1;
-                            xCnt++;
-                        }
+
+        for (int i = 0; i <= N - M; i++) {
+            int[] used = new int[M]; // B의 각 값 사용 여부
+            int match = 0;
+
+            for (int j = i; j < i + M; j++) {
+                for (int k = 0; k < M; k++) {
+                    if (A[j] == B[k] && used[k] == 0) {
+                        used[k] = 1; // 이 B[k]는 사용됨
+                        match++;
+                        break; // A[j] 하나는 한 번만 매칭
                     }
                 }
             }
-            if(xCnt == M)cnt++;
-            for(int x = 0; x < M; x++){
-                xB[x] = 0;
-            }
+
+            if (match == M) cnt++;
         }
 
-        System.out.print(cnt);
-
-
+        System.out.println(cnt);
     }
 }
