@@ -12,6 +12,7 @@ public class Main {
         int[] onTeam = new int[5];
         int[] team1 = new int[2];
         int[] team2 = new int[2];
+        boolean made = false;
 
 
         int minAnswer = Integer.MAX_VALUE;
@@ -27,6 +28,7 @@ public class Main {
                 onTeam[i] = 1;
                 onTeam[j] = 1;
                 int team1Score = team1[0] + team1[1];
+                
                 for(int k = 0; k < 4; k++){
                     for(int v = k + 1; v < 5; v++){
                         if(onTeam[k] == 0 && onTeam[v] == 0 && team1Score != (team[k] + team[v])){
@@ -35,7 +37,7 @@ public class Main {
                             int team2Score = team2[0] + team2[1];
                             int team3Score = sum - team1Score - team2Score;
                             if(team3Score != team1Score && team3Score != team2Score){
-                                
+                                made = true;
                                 int max = Math.max(team1Score, Math.max(team2Score, team3Score));
                                 int min = Math.min(team1Score, Math.min(team2Score, team3Score));
 
@@ -52,7 +54,11 @@ public class Main {
                 }
             }
         }
-
-        System.out.print(minAnswer);
+        if(!made){
+            System.out.print(-1);
+        }else{
+            System.out.print(minAnswer);
+        }
+        
     }
 }
