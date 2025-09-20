@@ -25,7 +25,7 @@ public class Main {
     }
     public static void main(String[] args) {
         int maxSafe = 0;
-        int safeK = 0;
+        int safeK = 1;
 
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
