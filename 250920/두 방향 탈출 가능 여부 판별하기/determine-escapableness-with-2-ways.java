@@ -28,7 +28,7 @@ public class Main {
             int newX = x + dx[i];
             int newY = y + dy[i];
             if(inRange(newX, newY, n, m)){
-                if(canGo(newX, newY, grid)){
+                if(canGo(newX, newY, grid) && visited[newX][newY] == 0){
                     DFS(newX, newY, visited, grid, n, m);
                 }
             }
