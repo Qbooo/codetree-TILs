@@ -57,7 +57,7 @@ public class Main {
             starts[i][0] = sc.nextInt() - 1;
             starts[i][1] = sc.nextInt() - 1;
             
-            if(!visitied[starts[i][0]][starts[i][1]] && grid[starts[i][0]][starts[i][1]] == 0){
+            if(!visitied[starts[i][0]][starts[i][1]] ){
                 q.add(new Pair(starts[i][0], starts[i][1]));
                 visitied[starts[i][0]][starts[i][1]] = true;
                 
