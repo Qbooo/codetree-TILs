@@ -25,7 +25,7 @@ public class Main {
             Pair curr = q.poll();
             int x = curr.x; 
             int y = curr.y;
-            if(grid[x][y] == 0)cnt++;
+            cnt++;
 
             int[] dx = {0, 0, 1, -1};
             int[] dy = {1, -1, 0, 0};
@@ -57,7 +57,7 @@ public class Main {
             starts[i][0] = sc.nextInt();
             starts[i][1] = sc.nextInt();
             
-            if(!visitied[starts[i][0]][starts[i][1]]){
+            if(!visitied[starts[i][0]][starts[i][1]] && grid[starts[i][0]][starts[i][1]] == 0){
                 q.add(new Pair(starts[i][0], starts[i][1]));
                 visitied[starts[i][0]][starts[i][1]] = true;
                 
