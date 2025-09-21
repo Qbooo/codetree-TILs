@@ -54,8 +54,8 @@ public class Main {
                 grid[i][j] = sc.nextInt();
         int[][] starts = new int[k][2];
         for (int i = 0; i < k; i++) {
-            starts[i][0] = sc.nextInt();
-            starts[i][1] = sc.nextInt();
+            starts[i][0] = sc.nextInt() - 1;
+            starts[i][1] = sc.nextInt() - 1;
             
             if(!visitied[starts[i][0]][starts[i][1]] && grid[starts[i][0]][starts[i][1]] == 0){
                 q.add(new Pair(starts[i][0], starts[i][1]));
