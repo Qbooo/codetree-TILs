@@ -19,7 +19,7 @@ public class Main {
         }
         
         // 1자리(1), 2자리(22), 3자리(333) 숫자 선택
-        for(int i = 1; i <= 3; i++) {
+        for(int i = 1; i <= 4; i++) {
             // i자리 숫자 추가
             choose(currNum + i);
         }
