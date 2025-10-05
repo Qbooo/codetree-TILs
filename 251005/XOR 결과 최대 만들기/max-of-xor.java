@@ -3,22 +3,23 @@ import java.util.*;
 public class Main {
     public static ArrayList<Integer> answer = new ArrayList<>();
     public static int n, m;
-    public static int[]A = new int[20];
+    public static int[] A = new int[20];
     public static int max = 0;
 
-    public static void choose(int currNum, int xor){
+    public static void choose(int currNum, int start, int xor){
         if(currNum == m){
             max = Math.max(max, xor);
             return;
         }
 
-        for(int i = 0; i < n; i++){
+        for(int i = start; i < n; i++){  // start부터 시작!
             answer.add(A[i]);
-            choose(currNum+1, xor ^ A[i]);
+            choose(currNum+1, i+1, xor ^ A[i]);  // 다음은 i+1부터
             answer.remove(answer.size()-1);
         }
         return;
     }
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
@@ -26,8 +27,8 @@ public class Main {
         for (int i = 0; i < n; i++) {
             A[i] = sc.nextInt();
         }
-        // Please write your code here.
-        choose(0, 0);
+        
+        choose(0, 0, 0);  // start = 0으로 시작
 
         System.out.print(max);
     }
