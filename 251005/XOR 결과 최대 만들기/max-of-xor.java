@@ -7,8 +7,8 @@ public class Main {
     public static int max = 0;
     public static int calcul(){
         int xor = 0;
-        for(int a : answer){
-            xor = xor ^ a;
+        for(int i = 0; i < m; i++){
+            xor = xor ^ answer.get(i);
         }
         return xor;
     }
