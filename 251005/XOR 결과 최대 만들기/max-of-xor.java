@@ -14,8 +14,7 @@ public class Main {
 
         for(int i = 0; i < n; i++){
             answer.add(A[i]);
-            xor = xor ^ A[i];
-            choose(currNum+1, xor);
+            choose(currNum+1, xor ^ A[i]);
             answer.remove(answer.size()-1);
         }
         return;
