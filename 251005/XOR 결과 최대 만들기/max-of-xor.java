@@ -19,7 +19,7 @@ public class Main {
             return;
         }
 
-        for(int i = 0; i < A.length; i++){
+        for(int i = 0; i < n; i++){
             answer.add(A[i]);
             choose(currNum+1);
             answer.remove(answer.size()-1);
