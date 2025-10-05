@@ -5,23 +5,17 @@ public class Main {
     public static int n, m;
     public static int[]A = new int[20];
     public static int max = 0;
-    public static int calcul(){
-        int xor = 0;
-        for(int i = 0; i < m; i++){
-            xor = xor ^ answer.get(i);
-        }
-        return xor;
-    }
-    public static void choose(int currNum){
+
+    public static void choose(int currNum, int xor){
         if(currNum == m){
-            int xor = calcul();
             max = Math.max(max, xor);
             return;
         }
 
         for(int i = 0; i < n; i++){
             answer.add(A[i]);
-            choose(currNum+1);
+            xor = xor ^ A[i];
+            choose(currNum+1, xor);
             answer.remove(answer.size()-1);
         }
         return;
@@ -34,7 +28,7 @@ public class Main {
             A[i] = sc.nextInt();
         }
         // Please write your code here.
-        choose(0);
+        choose(0, 0);
 
         System.out.print(max);
     }
