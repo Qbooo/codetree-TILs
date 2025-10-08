@@ -63,12 +63,12 @@ public class Main {
         // }
         // System.out.println();
 
+            System.out.println(n);
+
         for(int i = n-1; i >= 0; i--){
             System.out.println(blocks[i]);
         }
-        if(n == 0){
-            System.out.print(0);
-        }
+        
 
     }
 }
