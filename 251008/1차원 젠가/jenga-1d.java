@@ -16,11 +16,11 @@ public class Main {
         for(int i = e1; i <= s1; i++){
             blocks[i] = 0;
         }
-        // System.out.print("뺌1>>>");
-        // for(int i = 0; i < n; i ++){
-        //     System.out.print(blocks[i]+" ");
-        // }
-        // System.out.println();
+        System.out.print("뺌1>>>");
+        for(int i = 0; i < n; i ++){
+            System.out.print(blocks[i]+" ");
+        }
+        System.out.println();
         for(int i = 0; i < n - (e1 - s1 + 1); i++){
             if(blocks[i] == 0){
                 int j = i;
@@ -32,20 +32,20 @@ public class Main {
         }
 
         n =  n - (e1 - s1 + 1);
-        // System.out.print("뺌1111>>>");
-        // for(int i = 0; i < n; i ++){
-        //     System.out.print(blocks[i]+" ");
-        // }
-        // System.out.println();
+        System.out.print("뺌1111>>>");
+        for(int i = 0; i < n; i ++){
+            System.out.print(blocks[i]+" ");
+        }
+        System.out.println();
 
         for(int i = e2; i <= s2; i++){
             blocks[i] = 0;
         }
-        // System.out.print("뺌2>>>>");
-        // for(int i = 0; i < n; i ++){
-        //     System.out.print(blocks[i]+" ");
-        // }
-        // System.out.println();
+        System.out.print("뺌2>>>>");
+        for(int i = 0; i < n; i ++){
+            System.out.print(blocks[i]+" ");
+        }
+        System.out.println();
         for(int i = 0; i < n - (e2 - s2 + 1); i++){
             if(blocks[i] == 0){
                 int j = i;
@@ -57,11 +57,11 @@ public class Main {
         }
         n = n - (e2 - s2 + 1);
 
-        // System.out.print("뺌2>>>>");
-        // for(int i = 0; i < n; i ++){
-        //     System.out.print(blocks[i]+" ");
-        // }
-        // System.out.println();
+        System.out.print("뺌222222>>>>");
+        for(int i = 0; i < n; i ++){
+            System.out.print(blocks[i]+" ");
+        }
+        System.out.println();
 
             System.out.println(n);
 
