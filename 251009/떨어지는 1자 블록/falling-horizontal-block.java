@@ -6,7 +6,7 @@ public class Main {
         int min = Integer.MAX_VALUE;
         for(int i = k-1; i < k + m-1; i++){
             for(int j = 0; j < n; j++){
-                if(grid[j][i] == 1 && min > j){
+                if(grid[j][i] == 1 && min > j - 1){
                     min = j - 1;
                 }else if(j == n-1 && min > j){
                     min = j;
