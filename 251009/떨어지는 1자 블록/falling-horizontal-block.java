@@ -8,6 +8,8 @@ public class Main {
             for(int j = 0; j < n; j++){
                 if(grid[j][i] == 1 && min > j){
                     min = j - 1;
+                }else if(j == n-1 && min > j){
+                    min = j;
                 }
             }
         }
