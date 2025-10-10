@@ -11,8 +11,8 @@ public class Main {
     // 구슬 이동 계산
     public static void moveMarbles() {
         int[][] nextCount = new int[21][21];
-        int[] dx = {-1, 0, 1, 0}; // 상, 좌, 하, 우 (우선순위: 상 > 좌 > 하 > 우)
-        int[] dy = {0, -1, 0, 1};
+        int[] dx = {-1, 1, 0, 0}; // 상, 하, 좌, 우 (우선순위: 상 > 하 > 좌 > 우)
+        int[] dy = {0, 0, -1, 1};
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
