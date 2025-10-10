@@ -8,6 +8,55 @@ public class Main {
         return 0 <= x && x < n && 0 <= y && y < n;
     }
 
+    // 구슬 이동 계산
+    public static void moveMarbles() {
+        int[][] nextCount = new int[21][21];
+        int[] dx = {-1, 0, 1, 0}; // 상, 좌, 하, 우 (우선순위: 상 > 좌 > 하 > 우)
+        int[] dy = {0, -1, 0, 1};
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (count[i][j] == 0) continue;
+
+                int maxVal = -1;
+                int targetX = i;
+                int targetY = j;
+
+                // 상 > 좌 > 하 > 우 순으로 최대값 찾기
+                for (int d = 0; d < 4; d++) {
+                    int ni = i + dx[d];
+                    int nj = j + dy[d];
+                    if (inRange(ni, nj) && grid[ni][nj] > maxVal) {
+                        maxVal = grid[ni][nj];
+                        targetX = ni;
+                        targetY = nj;
+                    }
+                }
+
+                // 이동 (최대값이 -1이 아니면 이동, 아니면 제자리)
+                nextCount[targetX][targetY] += count[i][j];
+            }
+        }
+
+        // 다음 상태로 업데이트
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                count[i][j] = nextCount[i][j];
+            }
+        }
+    }
+
+    // 충돌 처리
+    public static void updateCount() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (count[i][j] >= 2) {
+                    count[i][j] = 0;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
@@ -23,53 +72,10 @@ public class Main {
             count[marbles[i][0]][marbles[i][1]]++;
         }
 
-        int[] dx = {-1, 0, 1, 0}; // 상, 좌, 하, 우 (우선순위 순서)
-        int[] dy = {0, -1, 0, 1};
-
+        // T번 시뮬레이션
         for (int time = 0; time < t; time++) {
-            int[][] nextCount = new int[21][21]; // 다음 상태
-
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (count[i][j] == 0) continue;
-
-                    int currVal = grid[i][j];
-                    int maxVal = -1;
-                    int targetX = i;
-                    int targetY = j;
-
-                    // 상 > 좌 > 하 > 우 순으로 체크
-                    for (int d = 0; d < 4; d++) {
-                        int ni = i + dx[d];
-                        int nj = j + dy[d];
-                        if (inRange(ni, nj) && grid[ni][nj] > currVal) {
-                            if (grid[ni][nj] > maxVal) {
-                                maxVal = grid[ni][nj];
-                                targetX = ni;
-                                targetY = nj;
-                            }
-                        }
-                    }
-
-                    // 이동 (maxVal이 -1이 아니면 이동, 아니면 제자리)
-                    if (maxVal > currVal) {
-                        nextCount[targetX][targetY] += count[i][j];
-                    } else {
-                        nextCount[i][j] += count[i][j];
-                    }
-                }
-            }
-
-            // 충돌 처리
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (nextCount[i][j] >= 2) {
-                        count[i][j] = 0;
-                    } else {
-                        count[i][j] = nextCount[i][j];
-                    }
-                }
-            }
+            moveMarbles();
+            updateCount();
         }
 
         // 남은 구슬 수 계산
