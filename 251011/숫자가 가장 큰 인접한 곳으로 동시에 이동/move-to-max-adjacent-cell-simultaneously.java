@@ -1,11 +1,13 @@
 import java.util.Scanner;
+
 public class Main {
     public static int n, m, t;
     public static int[][] grid = new int[21][21];
     public static int[][] count = new int[21][21];
-    public static boolean inRange(int x, int y){
+    public static boolean inRange(int x, int y) {
         return 0 <= x && x < n && 0 <= y && y < n;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
@@ -16,53 +18,49 @@ public class Main {
                 grid[i][j] = sc.nextInt();
         int[][] marbles = new int[m][2];
         for (int i = 0; i < m; i++) {
-            int r = sc.nextInt() - 1; // 0-based로 변환
-            int c = sc.nextInt() - 1;
-            count[r][c]++;
+            marbles[i][0] = sc.nextInt() - 1; // 0-based
+            marbles[i][1] = sc.nextInt() - 1;
+            count[marbles[i][0]][marbles[i][1]]++;
         }
 
-        int[] dx = {-1, 0, 1, 0}; // 상 좌 하 우 (순서 상관 없음)
+        int[] dx = {-1, 0, 1, 0}; // 상, 좌, 하, 우 (우선순위 순서)
         int[] dy = {0, -1, 0, 1};
 
         for (int time = 0; time < t; time++) {
-            int[][] nextCount = new int[21][21]; // 다음 상태 초기화
+            int[][] nextCount = new int[21][21]; // 다음 상태
 
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     if (count[i][j] == 0) continue;
 
-                    int maxV = -1;
-                    int targetX = -1;
-                    int targetY = -1;
-                    int numMax = 0;
+                    int currVal = grid[i][j];
+                    int maxVal = -1;
+                    int targetX = i;
+                    int targetY = j;
 
+                    // 상 > 좌 > 하 > 우 순으로 체크
                     for (int d = 0; d < 4; d++) {
                         int ni = i + dx[d];
                         int nj = j + dy[d];
-                        if (inRange(ni, nj)) {
-                            int v = grid[ni][nj];
-                            if (v > maxV) {
-                                maxV = v;
+                        if (inRange(ni, nj) && grid[ni][nj] > currVal) {
+                            if (grid[ni][nj] > maxVal) {
+                                maxVal = grid[ni][nj];
                                 targetX = ni;
                                 targetY = nj;
-                                numMax = 1;
-                            } else if (v == maxV) {
-                                numMax++;
                             }
                         }
                     }
 
-                    if (numMax == 1 && maxV > grid[i][j]) {
-                        // 이동
+                    // 이동 (maxVal이 -1이 아니면 이동, 아니면 제자리)
+                    if (maxVal > currVal) {
                         nextCount[targetX][targetY] += count[i][j];
                     } else {
-                        // stay
                         nextCount[i][j] += count[i][j];
                     }
                 }
             }
 
-            // 충돌 처리: >=2면 0으로
+            // 충돌 처리
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {
                     if (nextCount[i][j] >= 2) {
