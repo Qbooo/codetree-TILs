@@ -22,23 +22,23 @@ public class Main {
                 int targetX = i;
                 int targetY = j;
 
-                // 상 > 좌 > 하 > 우 순으로 최대값 찾기
+                // 상 > 좌 > 하 > 우 순으로 최대값과 위치 저장
                 for (int d = 0; d < 4; d++) {
                     int ni = i + dx[d];
                     int nj = j + dy[d];
-                    if (inRange(ni, nj) && grid[ni][nj] > maxVal) {
+                    if (inRange(ni, nj) && (grid[ni][nj] > maxVal)) {
                         maxVal = grid[ni][nj];
                         targetX = ni;
                         targetY = nj;
                     }
                 }
 
-                // 이동 (최대값이 -1이 아니면 이동, 아니면 제자리)
+                // 최대값이 격자 내에서 존재하면 이동, 없으면 제자리
                 nextCount[targetX][targetY] += count[i][j];
             }
         }
 
-        // 다음 상태로 업데이트
+        // 상태 업데이트
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 count[i][j] = nextCount[i][j];
@@ -69,7 +69,7 @@ public class Main {
         for (int i = 0; i < m; i++) {
             marbles[i][0] = sc.nextInt() - 1; // 0-based
             marbles[i][1] = sc.nextInt() - 1;
-            count[marbles[i][0]][marbles[i][1]]++;
+            count[marbles[i][0]][marbles[i][1]]++; // 중복 위치는 문제 조건상 없음
         }
 
         // T번 시뮬레이션
