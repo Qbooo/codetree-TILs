@@ -13,7 +13,7 @@ public class Main {
 
         for(int i = 0; i < N; i++){
             cul = cul + a[i];
-            max = cul;
+            max = Math.max(max, cul);
             if(cul < 0){
                 cul = 0;
             }
