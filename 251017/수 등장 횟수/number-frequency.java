@@ -1,38 +1,30 @@
 import java.util.*;
-import java.io.*;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static HashMap<Integer, Integer> map = new HashMap<>();  // m → map으로 변경
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();  // 이 변수명은 그대로 사용 (지역변수)
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int[] queries = new int[m];
+        for (int i = 0; i < m; i++) {
+            queries[i] = sc.nextInt();
+        }
+        
+        // 1. arr의 각 수의 등장 횟수를 HashMap에 저장
+        for (int i = 0; i < n; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        }
+        
+        // 2. 각 쿼리에 대해 등장 횟수 출력
         StringBuilder sb = new StringBuilder();
-        
-        int N = Integer.parseInt(br.readLine());
-        
-        // 1. HashMap에 각 수의 등장 횟수 저장
-        HashMap<Integer, Integer> countMap = new HashMap<>();
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        
-        for (int i = 0; i < N; i++) {
-            int num = Integer.parseInt(st.nextToken());
-            
-            // 방법 1: getOrDefault 사용
-            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
-            
-            // 방법 2: compute 사용 (대안)
-            // countMap.compute(num, (k, v) -> v == null ? 1 : v + 1);
+        for (int i = 0; i < m; i++) {
+            sb.append(map.getOrDefault(queries[i], 0)).append(" ");
         }
         
-        // 2. M개의 수에 대해 등장 횟수 조회
-        int M = Integer.parseInt(br.readLine());
-        st = new StringTokenizer(br.readLine());
-        
-        for (int i = 0; i < M; i++) {
-            int query = Integer.parseInt(st.nextToken());
-            
-            // HashMap에서 조회, 없으면 0 반환
-            sb.append(countMap.getOrDefault(query, 0)).append(" ");
-        }
-        
-        System.out.println(sb);
+        System.out.println(sb.toString().trim());
     }
 }
