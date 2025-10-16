@@ -13,25 +13,14 @@ public class Main {
         for (int i = n - 1; i >= 0; i--) {
             if (sb.charAt(i) != b.charAt(i)) {
                 cnt++;
-                // [0, i] 범위 반전
                 for (int j = 0; j <= i; j++) {
-                    if (sb.charAt(j) == 'G') {
-                        sb.setCharAt(j, 'H');
-                    } else {
-                        sb.setCharAt(j, 'G');
-                    }
+                    char c = sb.charAt(j);
+                    sb.setCharAt(j, c == 'G' ? 'H' : 'G');
                 }
             }
-            if (sb.toString().equals(b)) {
-                break;
-            }
+            if (sb.toString().equals(b)) break;
         }
 
-        // 최종 확인
-        if (sb.toString().equals(b)) {
-            System.out.println(cnt);
-        } else {
-            System.out.println(-1); // 문제 조건상 불필요할 수도
-        }
+        System.out.println(sb.toString().equals(b) ? cnt : -1);
     }
 }
