@@ -1,23 +1,28 @@
 import java.util.Scanner;
+
 public class Main {
+    public static final int MOD = 10007;
+    public static final int MAX_N = 1000;
+    
+    // 변수 선언
+    public static int n;
+    
+    public static int[] dp = new int[MAX_N + 1];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        // Please write your code here.
+        // 입력:
+        n = sc.nextInt();
 
-        if(n == 1){
-            System.out.print(1);
-        }else if( n == 2){
-            System.out.print(2);
-        }else{
-            int[] dp = new int[n+1];
-            dp[1] = 1;
-            dp[2] = 2;
+        // 초기 조건 설정
+        dp[0] = 1;
+        dp[1] = 1;
 
-            for(int i = 3; i < n+1; i++){
-                dp[i] = (dp[i-1]+dp[i-2])%10007;
-            }
-            System.out.print(dp[n]);
-        }
+        // 점화식에 따라 dp값 채우기
+        // dp[i] = dp[i - 1] + dp[i - 2]
+        for(int i = 2; i <= n; i++)
+            dp[i] = (dp[i - 1] + dp[i - 2]) % MOD;
+
+        System.out.print(dp[n]);
     }
 }
