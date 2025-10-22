@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static final int MAX = 1000;
-    public static int[] dp = new int[MAX+1];
+    public static long[] dp = new long[MAX+1];
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
